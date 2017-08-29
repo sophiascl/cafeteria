@@ -1,0 +1,72 @@
+<!doctype>
+	<html>
+		<head>
+		<link rel="stylesheet" href="./css/estilo.css"/>
+		<script src="./js/jquery.min.js"></script>
+		<script>
+			$(function(){
+				produtos = [
+					{"id":1,nome:"Expresso brigadeiro",preco:5.00},
+					{"id":2,nome:"Frappuccino",preco:5.50},
+					{"id":3,nome:"Espresso tradicional, macchiato ou com chantilly",preco:7.00},
+					{"id":4,nome:"Café Latte",preco:5.00},
+					{"id":5,nome:"Prensa Francesa",preco:6.00},
+					{"id":6,nome:"Chá Verde Latte",preco:4.00},
+					{"id":7,nome:"Chocolate Clássico",preco:7.00},
+					{"id":8,nome:"Choco Chip Frappuccino",preco:8.00},
+					{"id":9,nome:"Morango Frappuccino",preco:7.00},
+					{"id":10,nome:"Soft Cookie Choco Chip",preco:6.00},
+					{"id":11,nome:"Roll de Canela",preco:7.00},
+					{"id":12,nome:"Donuts de Creme ou Chocolate",preco:4.00},
+					{"id":13,nome:"Brownie de Chocolate com Doce de Leite",preco:5.00}
+				];
+			console.log(prodpornome(4));
+			$.each(produtos,function(indice,produto){
+			$('.produto')
+			.append("<tr><td>"+produto.nome+"</td><td>"+produto.preco+"</td><td>"+ "<button name=\"prod_"+produto.id+"class=\"adicionar\">+</button></td></tr>")
+			});
+			});
+			
+			function prodpornome(id){
+			var retorno=null;
+			$.each(produtos,function(indice,produto){
+			if(id==produto.id)
+			{
+			 retorno=produto;
+			}
+			});
+			return retorno;
+			}
+		</script>
+		</head>
+		<body>
+			<table border="1" >
+				<thead>
+					<tr>
+						<th>Nomes</th>
+						<th>Preços</th>
+						<th></th>
+					</tr>		
+				</thead>
+				<tbody class="produto">
+
+				</tbody>	
+			</table>
+			<table border="1" >
+				<thead>
+					<tr>
+						<th>Quantidade</th>
+						<th>Produto</th>
+						<th>Preço Unitário</th>
+						<th></th>
+					</tr>		
+				</thead>
+				<tbody>
+					
+				</tbody>
+				<tfoot>
+				<th>Total:</th>
+				<tfoot>
+			</table>
+		</body>
+	</html>
